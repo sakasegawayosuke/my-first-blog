@@ -1,0 +1,14 @@
+<!-- 草稿用のテンプレートを作成 -->
+
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<!-- 草稿の一覧を表示 -->
+    {% for post in posts %}
+        <div class="post">
+            <p class="date">created: {{ post.created_date|date:'d-m-Y' }}</p>
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|truncatechars:200 }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

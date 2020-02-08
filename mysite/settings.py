@@ -121,3 +121,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+#ログインページに直接アクセスして、ログインが成功した時にブログのホームページにリダイレクト
+LOGIN_REDIRECT_URL = '/'

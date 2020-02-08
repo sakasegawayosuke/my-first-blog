@@ -5,9 +5,12 @@
     <div class="post">
         <div class="date">
             <p>published: {{ post.published_date }}</p>
-        </div>
-        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-        <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+
+        <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>    <!-- コメントについて訪問者に知らせる -->
+
     </div>
 {% endfor %}
 {% endblock %}
